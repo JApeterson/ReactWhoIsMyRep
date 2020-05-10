@@ -2,7 +2,7 @@ import axios from "axios";
 export const getStateRepresentatives = async (state) => {
     return new Promise((resolve, reject) => {
         axios.get(
-            `http://localhost:5000/representatives/${state}`
+            `${process.env.REACT_APP_SERVER}representatives/${state}`
         )
             .then((res) => {
                 resolve(res);
@@ -16,7 +16,7 @@ export const getStateRepresentatives = async (state) => {
 export const getStateSenators = async (state) => {
     return new Promise((resolve, reject) => {
         axios.get(
-            `http://localhost:5000/senators/${state}`
+            `${process.env.REACT_APP_SERVER}senators/${state}`
         )
             .then((res) => {
                 resolve(res);
